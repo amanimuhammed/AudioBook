@@ -15,25 +15,30 @@ bughunter0 = Client(
 )
 
 START_STR = """
-Hi **{}**, I'm AudioBook Bot. Send Me a Pdf to Convert to AudioBook
+**Hi {},\nI'm AudioBook Bot. Send Me a Pdf to Convert to AudioBook\n\n🏷️ Maintained By: @Amani_m_h_d**
 """
 ABOUT = """
-**BOT:** `AudioBook-Bot`
-**AUTHOR :** [bughunter0](https://t.me/bughunter0)
-**SERVER :** `Heroku`
-**LIBRARY :** `Pyrogram`
-**SOURCE :** [GitHub](https://github.com/bughunter0)
-**LANGUAGE :** `Python 3.9`
+➥**My Name :** `AudioBook Bot🤓`
+➥**Dev : [Amani Muhammed](https://t.me/Amani_m_h_d)**
+➥**Channel : [Botz Hub](https://t.me/My_Test_Botz)**
+➥**Credits :** `Everyone in this journey`
+➥**Language :** `Python3`
+➥**Library : [Pyrogram](https://docs.pyrogram.org/)**
+➥**Server : [Heroku](https://herokuapp.com/)**
+➥**Source Code : [👉 Click Here](http://t.me/nokkiirunnoippokittum)**
+➥**Follow on Insta: [Follow me](https://www.instagram.com/amani_m_h_d)**
+       
+         **📜Quote :** `ക്ഷമ വേണം സമയം എടുക്കും 🙃™️`
 """
 HELP = """
-Send me a pdf file to Move on
+**Hey, Send me a pdf file to Move on.\n\n🏷️ Maintained By: @Amani_m_h_d**
 """
 
 DOWNLOAD_LOCATION = os.environ.get("DOWNLOAD_LOCATION", "./DOWNLOADS/AudioBoT/")
 
-Disclaimer = """ Disclaimer Notice , This Audio Is Generated automatically Through AudioBook Bot, Join BugHunterBots on Telegram for More Bots .     You are Now Listening to your Audio  ."""
+Disclaimer = """ Disclaimer Notice , This Audio Is Generated automatically Through AudioBook Bot, Join Botzhub for More Bots .    You are Now Listening to your Audio  ."""
   
-Thanks = """ Thats the End of Your Audio Book, Join BugHunterBots on Telegram To find more Interesting bots , And Thanks for Using this Service"""
+Thanks = """ Thats the End of Your Audio Book, Join Botzhub To find more Interesting bots , And Thanks for Using this Service"""
 
 START_BUTTON = InlineKeyboardMarkup(
         [[
@@ -41,7 +46,7 @@ START_BUTTON = InlineKeyboardMarkup(
         InlineKeyboardButton('HELP',callback_data='cbhelp')
         ],
         [
-        InlineKeyboardButton('↗ Join Here ↗', url='https://t.me/BughunterBots'),
+        InlineKeyboardButton('↗ Join Here ↗', url='https://t.me/my_test_botz'),
         ]]
         
     )
@@ -53,7 +58,7 @@ CLOSE_BUTTON = InlineKeyboardMarkup(
 
 CHANNEL_BUTTON = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('↗ Join Here ↗', url='https://t.me/BughunterBots')
+        InlineKeyboardButton('↗ Join Here ↗', url='https://t.me/my_test_botz')
         ]]
     )
 
@@ -109,7 +114,7 @@ async def pdf_to_text(bot, message):
                   for page in range (0,num_of_pages):              
                       page_no = pdf_reader.getPage(page) # Iteration of page number
                       page_content += page_no.extractText()
-                await txt.edit(f"Creating Your Audio Book...\n Please Don't Do Anything \n**Join :** `@BugHunterBots`")
+                await txt.edit(f"Creating Your Audio Book...\n Please Don't Do Anything \n**Join :** `@My_Test_Botz`")
                 output_text = Disclaimer + page_content + Thanks
               # Change Voice by editing the Language
                 language = 'en-in'  # 'en': ['en-us', 'en-ca', 'en-uk', 'en-gb', 'en-au', 'en-gh', 'en-in',
@@ -117,8 +122,8 @@ async def pdf_to_text(bot, message):
                 tts_file = gTTS(text=output_text, lang=language, slow=False) 
                 tts_file.save(f"{message.chat.id}.mp3")      
                 with open(f"{message.chat.id}.mp3", "rb") as speech:
-                      await bot.send_voice(chat_id, speech, caption ="@BugHunterBots",reply_markup=CHANNEL_BUTTON)   
-                await txt.edit("Join @BugHunterBots")    
+                      await bot.send_voice(chat_id, speech, caption ="@Amani_m_h_d",reply_markup=CHANNEL_BUTTON)   
+                await txt.edit("Join @my_test_botz")    
                 os.remove(pdf_path)  
                 
                 
